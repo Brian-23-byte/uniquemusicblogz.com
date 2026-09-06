@@ -89,14 +89,14 @@ const contentData = [
     {
         id: 103,
         type: 'song',
-        title: 'Lubumba Jesu - Love Me (ft. Rudo Acapella)',
-        slug: 'lubumba-jesu-love-me-ft-rudo-acapella',
-        artists: ['Lubumba Jesu', 'Rudo Acapella'],
+        title: 'Lubomba - Jesu Loves Me (ft. Rudo Acapella)',
+        slug: 'lubomba-jesu-love-me-ft-rudo-acapella',
+        artists: ['Lubomba', 'Rudo Acapella'],
         category: 'GOSPEL',
         date: 'Jan 23, 2026',
         excerpt: 'A breathtaking vocal performance. Lubumba Jesu and Rudo Acapella strip everything away to deliver a powerful, soulful message.',
         imageUrl: 'https://archive.org/download/lubomba/lubomba.png',
-        embedUrl: '', // TODO: paste official embed URL
+        embedUrl: 'https://www.youtube.com/embed/L4GAcFrbZXo?si=kEnZ1twFPfNiCRuJ',
         artistBio: 'Known for their harmonic precision and spiritual depth, these artists are redefining the Acapella scene in the region.'
     },
     {
