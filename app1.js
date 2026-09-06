@@ -32,6 +32,7 @@ const contentData = [
         excerpt: 'The freshest track from Pompi, reminds us that God is never late and His plans are the best.',
         imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png',
         embedUrl: '', // TODO: paste official YouTube/Spotify embed URL
+        downloadLink: 'https://ia601804.us.archive.org/11/items/pompi-shimwilili-ft.-tasha-nyambe-voh/Pompi%20Shimwilili%20Ft.%20Tasha%20Nyambe%20VOH%20.mp3', // Pompi - consent confirmed
         artistBio: 'Shimwilili by Pompi ft. Tasha Nyambe & (VOH) Vessels of Honor is a powerful Afrogospel worship song about trusting in God\u2019s perfect timing. In every season - waiting, uncertainty, or breakthrough - this song reminds us that God is never late and His plans are always best. Shot in the breathtaking landscapes of Mountain View Villa in Kafue, Zambia, the visuals reflect a journey of faith, patience, and surrender.'
     },
     {
