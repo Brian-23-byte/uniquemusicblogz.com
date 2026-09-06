@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 // --- Data Definitions ---
+// IMPORTANT: Replace every "embedUrl" value below with the OFFICIAL embed link
+// for that song (from the artist's own YouTube channel or their Spotify page).
+//
+// How to get an official YouTube embed URL:
+//   1. Go to the song's official video on the artist's own YouTube channel.
+//   2. Click "Share" -> "Embed".
+//   3. Copy the src="..." URL out of the <iframe> code (looks like
+//      https://www.youtube.com/embed/VIDEO_ID).
+//
+// How to get an official Spotify embed URL:
+//   1. Open the track on open.spotify.com.
+//   2. Click the "..." menu -> Share -> Embed track.
+//   3. Copy the src="..." URL (looks like
+//      https://open.spotify.com/embed/track/TRACK_ID).
+//
+// Until you fill in a real embedUrl, the site will show a "Listen on YouTube"
+// search link instead of a broken player - it will never auto-download or
+// re-host anyone's audio again.
+
 const contentData = [
     {
         id: 116,
@@ -8,60 +27,39 @@ const contentData = [
         title: 'Pompi - Shimwilili Ft. Tasha Nyambe & VOH (Brand New)',
         slug: 'pompi-shimwilili-ft-nasha-nyambe-voh',
         artists: ['Pompi', 'Tasha Nyambe', 'Vessils of Honor'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Jan 19, 2026',
         excerpt: 'The freshest track from Pompi, reminds us that God is never late and His plans are the best.',
-        imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png', 
-        audioUrl: 'https://ia601804.us.archive.org/11/items/pompi-shimwilili-ft.-tasha-nyambe-voh/Pompi%20Shimwilili%20Ft.%20Tasha%20Nyambe%20VOH%20.mp3',
-        downloadLink: 'https://ia601804.us.archive.org/11/items/pompi-shimwilili-ft.-tasha-nyambe-voh/Pompi%20Shimwilili%20Ft.%20Tasha%20Nyambe%20VOH%20.mp3',
-        artistBio: ' Shimwilili by Pompi ft. Tasha Nyambe & (VOH) Vessels of Honor is a powerful Afrogospel worship song about trusting in God’s perfect timing. In every season waiting, uncertainty, or breakthrough, this song reminds us that God is never late and His plans are always best. Shot in the breathtaking landscapes of             Mountain View Villa in Kafue, Zambia, the visuals reflect a journey of faith, patience, and surrender. Let this song encourage you to worship through every                 circumstance, knowing that God’s timing is perfect.'
+        imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png',
+        embedUrl: '', // TODO: paste official YouTube/Spotify embed URL
+        artistBio: 'Shimwilili by Pompi ft. Tasha Nyambe & (VOH) Vessels of Honor is a powerful Afrogospel worship song about trusting in God\u2019s perfect timing. In every season - waiting, uncertainty, or breakthrough - this song reminds us that God is never late and His plans are always best. Shot in the breathtaking landscapes of Mountain View Villa in Kafue, Zambia, the visuals reflect a journey of faith, patience, and surrender.'
     },
     {
         id: 101,
         type: 'song',
-        title: 'Jucy Yung - Someday (MP3 Download)',
-        slug: 'jucy-yung-someday-mp3-download',
+        title: 'Jucy Yung - Someday',
+        slug: 'jucy-yung-someday',
         artists: ['Jucy Yung'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Nov 15, 2025',
         excerpt: 'A soulful, melancholic track capturing the raw ache of heartbreak and the desperate wish to turn back time.',
-        imageUrl: 'https://ia600600.us.archive.org/18/items/song-cover-jucy-yung/song%20cover%20jucy%20yung.png', 
-        audioUrl: 'https://ia600907.us.archive.org/12/items/jucy-yung-someday/Jucy%20Yung%20-%20Someday.mp3',
-        downloadLink: 'https://ia600907.us.archive.org/12/items/jucy-yung-someday/Jucy%20Yung%20-%20Someday.mp3', 
-        artistBio: 'Released on September 8, 2023, "Someday" showcases Jucy young’s signature sentimental style. The track blends soulful, emotive vocals with a poignant narrative focused on the lingering pain of a breakup, the struggle of loneliness, and the deep-seated longing to return to a relationship’s happiest moments.'
+        imageUrl: 'https://ia600600.us.archive.org/18/items/song-cover-jucy-yung/song%20cover%20jucy%20yung.png',
+        embedUrl: 'https://www.youtube.com/embed/O_5Nixm0dIU', // reuse the lyric video already used below
+        artistBio: 'Released on September 8, 2023, "Someday" showcases Jucy Yung\u2019s signature sentimental style. The track blends soulful, emotive vocals with a poignant narrative focused on the lingering pain of a breakup, the struggle of loneliness, and the deep-seated longing to return to a relationship\u2019s happiest moments.'
     },
     {
         id: 102,
         type: 'song',
         title: 'Phyzo the Producer - Final Selection Cypher 2022',
-        slug: 'phyzo-the-producer-final-selection-cypher-2022-mp3-download',
+        slug: 'phyzo-the-producer-final-selection-cypher-2022',
         artists: ['Phyzo The Producer'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Nov 12, 2022',
         excerpt: 'A fresh new instrumental track perfect for late-night cruising.',
         imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png',
-        downloadLink: 'https://od.lk/d/NTBfMzQ1NzA0MDZf/Phyzo%20the%20Producer%20-%20Final%20Selection%20Cypher%20Mp3.mp3', 
-        audioUrl: 'https://od.lk/s/NTBfMzQ1NzA0MDZf/Phyzo%20the%20Producer%20-%20Final%20Selection%20Cypher%20Mp3.mp3', 
-        artistBio: '"Phyzo the producer" is a veteran producer and mixer based in Accra. His signature sound is heavily influenced by 90s West Coast hip-hop.'
+        embedUrl: '', // TODO: paste official embed URL
+        artistBio: '"Phyzo the Producer" is a veteran producer and mixer based in Accra. His signature sound is heavily influenced by 90s West Coast hip-hop.'
     },
-   /* {
-        id: 2,
-        type: 'album', 
-        title: 'Florence + The Machine - "Celestial Ground" (Full Album)',
-        slug: 'album-florence-and-the-machine-celestial-ground',
-        artists: ['Florence + The Machine'],
-        category: 'ALBUMS', 
-        date: 'Nov 12, 2025',
-        excerpt: 'Florence Welch returns with a sprawling, ambitious, and deeply personal album.',
-        imageUrl: 'https://picsum.photos/seed/florence/600/300',
-        content: '<p>Florence Welch has never been one for subtlety. On "Celestial Ground," her fifth studio album, she leans into her maximalist tendencies more than ever.</p>',
-        tracks: [ 
-            { title: "Heaven is Waiting", duration: "4:05" },
-            { title: "Cosmic Wonder", duration: "3:30" },
-            { title: "Lighthouse Keeper", duration: "5:12" }
-        ],
-        zipDownloadLink: '#'
-    }, */
     {
         id: 3,
         type: 'video',
@@ -70,57 +68,36 @@ const contentData = [
         artists: ['Jucy Yung'],
         category: 'VIDEOS',
         date: 'Nov 10, 2025',
-        excerpt: 'A Catchy song.',
-        imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png', 
+        excerpt: 'A catchy song.',
+        imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png',
         videoUrl: 'https://www.youtube.com/embed/O_5Nixm0dIU',
-        content:  'A soulful, melancholic track capturing the raw ache of heartbreak and the desperate wish to turn back time.'
+        content: 'A soulful, melancholic track capturing the raw ache of heartbreak and the desperate wish to turn back time.'
     },
     {
-      id: 118, 
-      type: 'song',
-      title: 'Slapdee X Dizmo - Asante (ft. Dreckzine)',
-      slug: 'slapdee-x-dizmo-asante-ft-dreckzine',
-      artists: ['Slapdee', 'Dizmo', 'Dreckzine'],
-      category: 'DOWNLOADS',
-      date: 'Jan 21, 2026',
-      excerpt: 'A powerful collaboration bringing together giants. Asante is a masterclass in Zambian hip-hop and lyricism.',
-      imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png',
-      audioUrl: 'https://ia903107.us.archive.org/14/items/slapdee-x-dizmo-asante-ft-dreckzine/Slapdee%20X%20Dizmo%20Asante%20ft%20Dreckzine.mp3',
-      downloadLink: 'https://ia903107.us.archive.org/14/items/slapdee-x-dizmo-asante-ft-dreckzine/Slapdee%20X%20Dizmo%20Asante%20ft%20Dreckzine.mp3',
-      artistBio: 'A powerful collaboration bringing together giants. Asante is a masterclass in Zambian hip-hop and lyricism.'
+        id: 118,
+        type: 'song',
+        title: 'Slapdee X Dizmo - Asante (ft. Dreckzine)',
+        slug: 'slapdee-x-dizmo-asante-ft-dreckzine',
+        artists: ['Slapdee', 'Dizmo', 'Dreckzine'],
+        category: 'SPOTLIGHT',
+        date: 'Jan 21, 2026',
+        excerpt: 'A powerful collaboration bringing together giants. Asante is a masterclass in Zambian hip-hop and lyricism.',
+        imageUrl: 'https://archive.org/download/uniquemusicbloglogo/uniquemusicbloglogo.png',
+        embedUrl: '', // TODO: paste official embed URL
+        artistBio: 'A powerful collaboration bringing together giants. Asante is a masterclass in Zambian hip-hop and lyricism.'
     },
-   /* {
-        id: 5,
-        type: 'album',
-        title: 'Vibe Masters - "Night Owl" (EP)',
-        slug: 'vibe-masters-night-owl-ep',
-        artists: ['Vibe Masters'],
-        category: 'ALBUMS',
-        date: 'Sep 15, 2025',
-        excerpt: 'The perfect companion for late-night study sessions or chill evenings.',
-        imageUrl: 'https://picsum.photos/seed/nightowl/600/300',
-        content: '<p>Vibe Masters brings a collection of lo-fi beats that are sure to help you focus or relax.</p>',
-        tracks: [
-            { title: "Quiet Reflection", duration: "2:45" },
-            { title: "Midnight Tea", duration: "3:10" },
-            { title: "City Lights", duration: "2:55" }
-        ],
-        zipDownloadLink: '#'
-    }, */
-
-        {
-          id: 103, 
-          type: 'song',
-          title: 'Lubumba Jesu - Love Me (ft. Rudo Acapella)',
-          slug: 'lubumba-jesu-love-me-ft-rudo-acapella',
-          artists: ['Lubumba Jesu', 'Rudo Acapella'],
-          category: 'GOSPEL',
-          date: 'Jan 23, 2026',
-          excerpt: 'A breathtaking vocal performance. Lubumba Jesu and Rudo Acapella strip everything away to deliver a powerful, soulful message.',
-          imageUrl: 'https://archive.org/download/lubomba/lubomba.png', 
-          audioUrl: 'https://ia600108.us.archive.org/17/items/lubumba-jesu-love-me-ft.-rudo-acapella/Lubumba%20Jesu%20Love%20Me%20Ft.%20Rudo%20Acapella.mp3',
-          downloadLink: 'https://ia600108.us.archive.org/17/items/lubumba-jesu-love-me-ft.-rudo-acapella/Lubumba%20Jesu%20Love%20Me%20Ft.%20Rudo%20Acapella.mp3',
-          artistBio: 'Known for their harmonic precision and spiritual depth, these artists are redefining the Acapella scene in the region.'
+    {
+        id: 103,
+        type: 'song',
+        title: 'Lubumba Jesu - Love Me (ft. Rudo Acapella)',
+        slug: 'lubumba-jesu-love-me-ft-rudo-acapella',
+        artists: ['Lubumba Jesu', 'Rudo Acapella'],
+        category: 'GOSPEL',
+        date: 'Jan 23, 2026',
+        excerpt: 'A breathtaking vocal performance. Lubumba Jesu and Rudo Acapella strip everything away to deliver a powerful, soulful message.',
+        imageUrl: 'https://archive.org/download/lubomba/lubomba.png',
+        embedUrl: '', // TODO: paste official embed URL
+        artistBio: 'Known for their harmonic precision and spiritual depth, these artists are redefining the Acapella scene in the region.'
     },
     {
         id: 104,
@@ -128,12 +105,11 @@ const contentData = [
         title: 'Melody Queen - Soul Serenade',
         slug: 'melody-queen-soul-serenade',
         artists: ['Melody Queen'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 05, 2025',
         excerpt: 'A beautiful vocal masterpiece that touches the heart.',
         imageUrl: 'https://picsum.photos/seed/soul/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3',
+        embedUrl: '', // TODO: this entry used placeholder demo audio before - replace with a real song + embed, or remove
         artistBio: 'Melody Queen is the leading voice in modern soul, bringing emotions to life through her powerful range.'
     },
     {
@@ -142,12 +118,11 @@ const contentData = [
         title: 'Afro Beat King - Dance Floor',
         slug: 'afro-beat-king-dance-floor',
         artists: ['Afro Beat King'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 10, 2025',
         excerpt: 'The ultimate party anthem for every dance floor.',
         imageUrl: 'https://picsum.photos/seed/dance/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+        embedUrl: '', // TODO: this entry used placeholder demo audio before - replace with a real song + embed, or remove
         artistBio: 'Afro Beat King is a producer and DJ based in Lagos, bringing the best of Afrobeats to the global stage.'
     },
     {
@@ -156,12 +131,11 @@ const contentData = [
         title: 'Yo Maps - Nga Pano',
         slug: 'yo-maps-nga-pano',
         artists: ['Yo Maps'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 15, 2025',
-        excerpt: 'A chart-topping emotional ballad from Zambias biggest star.',
+        excerpt: 'A chart-topping emotional ballad from Zambia\u2019s biggest star.',
         imageUrl: 'https://picsum.photos/seed/yomaps/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Yo Maps is a Zambian singer, songwriter, and producer who has dominated the local music scene with hits like "Finally".'
     },
     {
@@ -170,12 +144,11 @@ const contentData = [
         title: 'Chef 187 - Pettition',
         slug: 'chef-187-pettition',
         artists: ['Chef 187'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 18, 2025',
         excerpt: 'The lyrical master returns with another conscious rap banger.',
         imageUrl: 'https://picsum.photos/seed/chef187/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Chef 187 is a legendary Zambian hip-hop artist known for his complex wordplay and street-smart lyrics.'
     },
     {
@@ -184,12 +157,11 @@ const contentData = [
         title: 'Slapdee - Mother Tongue',
         slug: 'slapdee-mother-tongue',
         artists: ['Slapdee'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 20, 2025',
         excerpt: 'A powerful celebration of Zambian culture and identity.',
         imageUrl: 'https://picsum.photos/seed/slapdee/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Slapdee is an icon of Zambian music, widely considered one of the pioneers of modern Zambian hip-hop.'
     },
     {
@@ -198,12 +170,11 @@ const contentData = [
         title: 'Burna Boy - Last Last',
         slug: 'burna-boy-last-last',
         artists: ['Burna Boy'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 22, 2025',
         excerpt: 'The global Afrobeats anthem that has taken the world by storm.',
         imageUrl: 'https://picsum.photos/seed/burnaboy/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Burna Boy is a Grammy-winning Nigerian singer and songwriter, a leading figure in the global Afrobeats movement.'
     },
     {
@@ -212,12 +183,11 @@ const contentData = [
         title: 'Tems - Free Mind',
         slug: 'tems-free-mind',
         artists: ['Tems'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 24, 2025',
         excerpt: 'Soulful, ethereal, and deeply moving music from Tems.',
         imageUrl: 'https://picsum.photos/seed/tems/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Tems is a Nigerian singer and producer whose unique vocal style has earned her international acclaim and collaborations with global superstars.'
     },
     {
@@ -226,12 +196,11 @@ const contentData = [
         title: 'Roberto - Amarulah',
         slug: 'roberto-amarulah',
         artists: ['Roberto'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 26, 2025',
         excerpt: 'The dancehall classic that cemented Roberto as a continental star.',
         imageUrl: 'https://picsum.photos/seed/roberto/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Roberto is a Zambian singer, songwriter, and producer known for his smooth R&B and dancehall fusions.'
     },
     {
@@ -240,12 +209,11 @@ const contentData = [
         title: 'Pompi - Simanjemanje',
         slug: 'pompi-simanjemanje',
         artists: ['Pompi'],
-        category: 'DOWNLOADS',
+        category: 'GOSPEL',
         date: 'Dec 28, 2025',
         excerpt: 'Gospel music with a modern, jazzy twist from the Lota House leader.',
         imageUrl: 'https://picsum.photos/seed/pompi/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Pompi is a Zambian gospel artist who has revolutionized the genre with his unique sound and message-driven lyrics.'
     },
     {
@@ -254,12 +222,11 @@ const contentData = [
         title: 'Wizkid - Essence',
         slug: 'wizkid-essence',
         artists: ['Wizkid'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Dec 30, 2025',
         excerpt: 'The "song of the summer" that made history on international charts.',
         imageUrl: 'https://picsum.photos/seed/wizkid/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Wizkid is one of Nigeria\'s biggest musical exports, known for his infectious melodies and global chart dominance.'
     },
     {
@@ -268,12 +235,11 @@ const contentData = [
         title: 'Cleo Ice Queen - Soldier',
         slug: 'cleo-ice-queen-soldier',
         artists: ['Cleo Ice Queen'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Jan 01, 2026',
         excerpt: 'A powerful anthem of strength and resilience from Zambia\'s hip-hop royalty.',
         imageUrl: 'https://picsum.photos/seed/cleo/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Cleo Ice Queen is an award-winning Zambian rapper and singer, known for her fierce flow and stylish branding.'
     },
     {
@@ -282,12 +248,11 @@ const contentData = [
         title: 'Macky 2 - Alabalansa',
         slug: 'macky-2-alabalansa',
         artists: ['Macky 2'],
-        category: 'DOWNLOADS',
+        category: 'SPOTLIGHT',
         date: 'Jan 02, 2026',
         excerpt: 'The king of the streets returns with a message for his fans.',
         imageUrl: 'https://picsum.photos/seed/macky2/600/300',
-        downloadLink: '#',
-        audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+        embedUrl: '', // TODO: paste official embed URL
         artistBio: 'Macky 2 is a Zambian hip hop artist, singer, and producer, widely recognized as one of the most influential figures in the Zambian music industry.'
     }
 ];
@@ -312,47 +277,27 @@ const Favorites = {
         return this.get().includes(id);
     }
 };
-    // --- Force Download Logic ---
-window.forceDownload = function(url, title) {
-    const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    
-    // Show a small console log so you know it started
-    console.log("Downloading: " + title);
-
-    fetch(url)
-        .then(response => response.blob())
-        .then(blob => {
-            const blobUrl = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = blobUrl;
-            a.download = safeTitle + ".mp3";
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            window.URL.revokeObjectURL(blobUrl);
-        })
-        .catch(() => {
-            // Fallback: Opens in new tab if the fetch is blocked
-            window.open(url, '_blank');
-        });
-};
 
 // --- Helper Functions ---
 function isNewRelease(dateStr) {
     if (!dateStr) return false;
     const releaseDate = new Date(dateStr);
     const today = new Date();
-    // If release date is in the future (for scheduling), also show as NEW
     if (releaseDate > today) return true;
     const diffTime = Math.abs(today - releaseDate);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays <= 14;
 }
 
+function youtubeSearchUrl(title, artists) {
+    const q = encodeURIComponent(`${title} ${artists ? artists.join(' ') : ''}`.trim());
+    return `https://www.youtube.com/results?search_query=${q}`;
+}
+
 function generateSocialShareButtons(title) {
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(title);
-    
+
     return `
         <div class="mt-8 pt-8 border-t border-gray-700">
             <h3 class="text-xl font-bold mb-4">Share this</h3>
@@ -389,9 +334,6 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 const backButton = document.getElementById('back-button');
 const contentDisplayContainer = document.getElementById('content-display-container');
-const miniPlayer = document.getElementById('mini-player');
-const mainAudio = document.getElementById('main-audio');
-const footerSocialLinks = document.querySelectorAll('.footer-social-link');
 const mobileMenuIcons = mobileMenuButton.querySelectorAll('svg');
 
 // --- Routing ---
@@ -411,7 +353,6 @@ function showView(viewId) {
 }
 
 function routeToPath() {
-    // Mobile Menu Fix
     if (mobileMenu) mobileMenu.classList.add('hidden');
     if (mobileMenuIcons.length >= 2) {
         mobileMenuIcons[0].classList.remove('hidden');
@@ -419,7 +360,7 @@ function routeToPath() {
     }
 
     const hash = window.location.hash || '#/';
-    const path = hash.slice(2); 
+    const path = hash.slice(2);
 
     if (!path || path === '/') {
         showView('home-view');
@@ -431,6 +372,8 @@ function routeToPath() {
         showView('videos-view');
         renderGrid(contentData.filter(i => i.type === 'video'), 'videos-content-grid');
     } else if (path === 'downloads/') {
+        // Kept the route so old links don't 404, but it now shows the same
+        // streaming spotlight songs instead of a download list.
         showView('downloads-view');
         renderGrid(contentData.filter(i => i.type === 'song'), 'downloads-content-grid');
     } else if (path === 'favorites/') {
@@ -472,14 +415,13 @@ function renderArtistProfile(artistName) {
     }
 
     const artistItems = contentData.filter(item => item.artists && item.artists.includes(artistName));
-    
+
     if (artistItems.length === 0) {
         headerContainer.innerHTML = '<p>Artist not found.</p>';
-        contentContainer.innerHTML = ''; // Clear previous content
+        contentContainer.innerHTML = '';
         return;
     }
 
-    // Get bio and image from the first item found (or default)
     const bio = artistItems[0].artistBio || "No biography available.";
     const image = artistItems[0].imageUrl;
 
@@ -488,11 +430,6 @@ function renderArtistProfile(artistName) {
         <div class="text-center md:text-left">
             <h1 class="text-4xl font-black mb-4">${artistName}</h1>
             <p class="text-gray-300 leading-relaxed max-w-2xl">${bio}</p>
-            <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
-                 <button onclick="playSong(${artistItems[0].id})" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors">
-                    <i class="fas fa-play mr-2"></i> Play Latest
-                 </button>
-            </div>
         </div>
     `;
 
@@ -541,7 +478,16 @@ function renderDetail(item) {
     const socialButtons = generateSocialShareButtons(item.title);
 
     if (item.type === 'song') {
-        const downloadAction = item.downloadLink === '#' ? 'onclick="simulateDownload(event)"' : '';
+        const playerHTML = item.embedUrl
+            ? `<div class="aspect-video rounded-xl overflow-hidden bg-black">
+                   <iframe class="w-full h-full" src="${item.embedUrl}" frameborder="0"
+                       allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+               </div>`
+            : `<a href="${youtubeSearchUrl(item.title, item.artists)}" target="_blank" rel="noopener"
+                   class="block w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-xl text-center transition-colors">
+                   <i class="fab fa-youtube mr-2"></i> Listen on YouTube
+               </a>`;
+
         content = `
             <div class="p-6 md:p-10">
                 <div class="flex flex-col md:flex-row gap-8">
@@ -557,20 +503,11 @@ function renderDetail(item) {
                         <p class="text-gray-400 mb-6">Released: ${item.date}</p>
 
                         <div class="bg-gray-900 p-6 rounded-2xl border border-gray-700 mb-8">
-                                <h3 class="text-xl font-bold mb-4 flex items-center">
-                                    <i class="fas fa-play-circle mr-2 text-red-500"></i> Listen Now
-                                </h3>
-                                
-                                <button onclick="playSong(${item.id})" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
-                                    <i class="fas fa-play"></i> Play Preview
-                                </button>
-                            
-                                <button onclick="forceDownload('${item.downloadLink}', '${item.title}')" 
-                                        class="w-full mt-3 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
-                                    <i class="fas fa-download"></i> Download MP3
-                                </button>
-                    </div>
-                        
+                            <h3 class="text-xl font-bold mb-4 flex items-center">
+                                <i class="fas fa-play-circle mr-2 text-red-500"></i> Listen Now
+                            </h3>
+                            ${playerHTML}
+                        </div>
                     </div>
                 </div>
                 <div class="mt-10 prose prose-invert max-w-none">
@@ -579,13 +516,13 @@ function renderDetail(item) {
                 </div>
 
                 ${socialButtons}
-                
+
                 <div class="mt-12 pt-8 border-t border-gray-700">
                     <h2 class="text-3xl font-bold mb-6">Related Songs</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        ${contentData.filter(related => 
-                            related.id !== item.id && 
-                            related.artists && item.artists && 
+                        ${contentData.filter(related =>
+                            related.id !== item.id &&
+                            related.artists && item.artists &&
                             related.artists.some(artist => item.artists.includes(artist))
                         ).map(related => {
                             const isNew = isNewRelease(related.date);
@@ -615,7 +552,7 @@ function renderDetail(item) {
             <div class="p-6 md:p-10">
                 <h1 class="text-4xl font-black mb-6">${item.title}</h1>
                 <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black mb-8">
-                    <iframe class="w-full h-full" src="${item.videoUrl}" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="${item.videoUrl}" frameborder="0" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="prose prose-invert max-w-none">
                     ${item.content}
@@ -624,7 +561,6 @@ function renderDetail(item) {
             </div>
         `;
     } else if (item.type === 'album') {
-        const downloadAction = item.zipDownloadLink === '#' ? 'onclick="simulateDownload(event)"' : '';
         content = `
             <div class="relative h-64 md:h-96">
                 <img src="${item.imageUrl}" class="w-full h-full object-cover">
@@ -634,31 +570,19 @@ function renderDetail(item) {
                 </div>
             </div>
             <div class="p-6 md:p-10">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="md:col-span-2">
-                        <div class="prose prose-invert max-w-none mb-8">
-                            ${item.content}
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Tracklist</h3>
-                        <div class="space-y-2">
-                            ${item.tracks.map((t, idx) => `
-                                <div class="flex justify-between p-4 bg-gray-900 rounded-xl border border-gray-700 hover:bg-gray-750 transition-colors">
-                                    <span class="font-medium">${idx + 1}. ${t.title}</span>
-                                    <span class="text-gray-500">${t.duration}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="bg-red-600 p-6 rounded-2xl shadow-xl text-center">
-                            <h4 class="text-xl font-bold mb-2">Get Full Album</h4>
-                            <p class="text-sm mb-6 opacity-90">Download all tracks in a single ZIP file.</p>
-                            <a href="${item.zipDownloadLink}" ${downloadAction} class="block bg-gray-900 text-white font-black py-4 rounded-xl hover:scale-105 transition-transform">
-                                <i class="fas fa-file-archive mr-2"></i> DOWNLOAD ZIP
-                            </a>
-                        </div>
-                    </div>
+                <div class="prose prose-invert max-w-none mb-8">
+                    ${item.content}
                 </div>
+                <h3 class="text-2xl font-bold mb-4">Tracklist</h3>
+                <div class="space-y-2">
+                    ${item.tracks.map((t, idx) => `
+                        <div class="flex justify-between p-4 bg-gray-900 rounded-xl border border-gray-700 hover:bg-gray-750 transition-colors">
+                            <span class="font-medium">${idx + 1}. ${t.title}</span>
+                            <span class="text-gray-500">${t.duration}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <p class="text-sm text-gray-500 mt-6">Available on all major streaming platforms.</p>
                 ${socialButtons}
             </div>
         `;
@@ -674,64 +598,18 @@ window.navigateTo = function(path) {
 
 window.toggleFavorite = function(id, refreshDetail = false) {
     Favorites.toggle(id);
-    routeToPath(); 
+    routeToPath();
 };
-
-window.playSong = function(id) {
-    const item = contentData.find(i => i.id === id);
-    if (!item) return;
-
-    const miniPlayerImg = document.getElementById('mini-player-img');
-    const miniPlayerTitle = document.getElementById('mini-player-title');
-    const miniPlayerArtist = document.getElementById('mini-player-artist');
-    const playPauseBtn = document.getElementById('audio-play-pause');
-
-    miniPlayerImg.src = item.imageUrl;
-    miniPlayerTitle.textContent = item.title;
-    miniPlayerArtist.textContent = item.artists.join(', ');
-    mainAudio.src = item.audioUrl;
-    
-    miniPlayer.classList.remove('translate-y-full');
-    mainAudio.play();
-    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-};
-
-window.simulateDownload = function(e) {
-    e.preventDefault();
-    alert("This is a demo! In a real app, the download would start now.");
-};
-
-// --- Player Logic ---
-document.getElementById('audio-play-pause').addEventListener('click', () => {
-    const btn = document.getElementById('audio-play-pause');
-    if (mainAudio.paused) {
-        mainAudio.play();
-        btn.innerHTML = '<i class="fas fa-pause"></i>';
-    } else {
-        mainAudio.pause();
-        btn.innerHTML = '<i class="fas fa-play"></i>';
-    }
-});
-
-mainAudio.addEventListener('timeupdate', () => {
-    const progress = (mainAudio.currentTime / mainAudio.duration) * 100;
-    document.getElementById('audio-progress').style.width = progress + '%';
-});
-
-document.getElementById('close-mini-player').addEventListener('click', () => {
-    miniPlayer.classList.add('translate-y-full');
-    mainAudio.pause();
-});
 
 // --- Search ---
 function performSearch(query) {
-    if(!query) return;
+    if (!query) return;
     showView('search-results-view');
-    const results = contentData.filter(item => 
-        item.title.toLowerCase().includes(query.toLowerCase()) || 
+    const results = contentData.filter(item =>
+        item.title.toLowerCase().includes(query.toLowerCase()) ||
         (item.artists && item.artists.some(artist => artist.toLowerCase().includes(query.toLowerCase())))
     );
-    
+
     document.getElementById('search-query-display').textContent = query;
     document.getElementById('search-count-display').textContent = `Found ${results.length} results.`;
     renderGrid(results, 'search-content-grid');
