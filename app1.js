@@ -89,14 +89,15 @@ const contentData = [
     {
         id: 103,
         type: 'song',
-        title: 'Lubomba - Jesu Loves Me (ft. Rudo Acapella)',
-        slug: 'lubomba-jesu-love-me-ft-rudo-acapella',
-        artists: ['Lubomba', 'Rudo Acapella'],
+        title: 'Lubumba Jesu - Love Me (ft. Rudo Acapella)',
+        slug: 'lubumba-jesu-love-me-ft-rudo-acapella',
+        artists: ['Lubumba Jesu', 'Rudo Acapella'],
         category: 'GOSPEL',
         date: 'Jan 23, 2026',
         excerpt: 'A breathtaking vocal performance. Lubumba Jesu and Rudo Acapella strip everything away to deliver a powerful, soulful message.',
         imageUrl: 'https://archive.org/download/lubomba/lubomba.png',
         embedUrl: 'https://www.youtube.com/embed/L4GAcFrbZXo?si=kEnZ1twFPfNiCRuJ',
+        // downloadLink: 'PASTE_HOSTED_FILE_URL_HERE', // uncomment ONLY if this artist has paid/consented to downloads
         artistBio: 'Known for their harmonic precision and spiritual depth, these artists are redefining the Acapella scene in the region.'
     },
     {
@@ -288,6 +289,28 @@ function isNewRelease(dateStr) {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays <= 14;
 }
+
+// Only ever wire this up to a downloadLink for tracks where the artist has
+// actually paid for / consented to hosting and downloads. Keep a record
+// (message, email, agreement) of that consent for every track that uses it.
+window.forceDownload = function(url, title) {
+    const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            const blobUrl = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = safeTitle + ".mp3";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(blobUrl);
+        })
+        .catch(() => {
+            window.open(url, '_blank');
+        });
+};
 
 function youtubeSearchUrl(title, artists) {
     const q = encodeURIComponent(`${title} ${artists ? artists.join(' ') : ''}`.trim());
@@ -488,6 +511,17 @@ function renderDetail(item) {
                    <i class="fab fa-youtube mr-2"></i> Listen on YouTube
                </a>`;
 
+        // Only show a download button when downloadLink is explicitly set on
+        // the entry. Only fill in downloadLink for tracks where the artist
+        // has actually paid for / consented to hosting and downloads -
+        // never add it just because you found a copy of the file somewhere.
+        const downloadHTML = item.downloadLink
+            ? `<button onclick="forceDownload('${item.downloadLink}', '${item.title.replace(/'/g, "\\'")}')"
+                   class="w-full mt-3 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                   <i class="fas fa-download"></i> Download MP3
+               </button>`
+            : '';
+
         content = `
             <div class="p-6 md:p-10">
                 <div class="flex flex-col md:flex-row gap-8">
@@ -507,6 +541,7 @@ function renderDetail(item) {
                                 <i class="fas fa-play-circle mr-2 text-red-500"></i> Listen Now
                             </h3>
                             ${playerHTML}
+                            ${downloadHTML}
                         </div>
                     </div>
                 </div>
