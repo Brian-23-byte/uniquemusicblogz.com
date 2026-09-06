@@ -505,7 +505,8 @@ function renderDetail(item) {
         const playerHTML = item.embedUrl
             ? `<div class="aspect-video rounded-xl overflow-hidden bg-black">
                    <iframe class="w-full h-full" src="${item.embedUrl}" frameborder="0"
-                       allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                       allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
                </div>`
             : `<a href="${youtubeSearchUrl(item.title, item.artists)}" target="_blank" rel="noopener"
                    class="block w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-xl text-center transition-colors">
